@@ -1,0 +1,27 @@
+site_name: Linson Philip's Portfolio
+theme:
+  name: material  # Modern and professional theme
+  palette:
+    primary: indigo
+    accent: deep-orange
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Skills: skill.md
+  - Projects: projects.md
+  - Contact: contact.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/linson-philip
+    - icon: fontawesome/brands/github
+      link: https://github.com/linsphilip
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
