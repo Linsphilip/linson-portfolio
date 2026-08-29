@@ -1,0 +1,144 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,left=0.85cm,right=0.85cm,top=0.72cm,bottom=0.72cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{sidebar}{HTML}{F1F1F1}
+\definecolor{ink}{HTML}{2F2F2F}
+\definecolor{muted}{HTML}{606060}
+\definecolor{line}{HTML}{8A8A8A}
+\definecolor{accent}{HTML}{17365D}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\renewcommand{\familydefault}{\sfdefault}
+
+\setlist[itemize]{leftmargin=1.15em,itemsep=1.2pt,topsep=1.6pt,parsep=0pt,partopsep=0pt}
+
+\AddToHook{shipout/background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[sidebar] (current page.north west) rectangle ([xshift=6.72cm]current page.south west);
+  \end{tikzpicture}%
+}
+
+\newcommand{\sideheading}[1]{\vspace{7pt}{\fontsize{11.4}{12.8}\selectfont\bfseries\color{ink} #1}\par\vspace{1.6pt}\color{line}\rule{\linewidth}{0.5pt}\color{ink}\vspace{3.5pt}}
+\newcommand{\mainheading}[1]{\vspace{7pt}{\fontsize{12.8}{14.2}\selectfont\bfseries\color{ink} #1}\par\vspace{1.7pt}\color{line}\rule{\linewidth}{0.55pt}\color{ink}\vspace{4pt}}
+\newcommand{\sideentry}[3]{{\fontsize{8.2}{9.5}\selectfont\bfseries\RaggedRight\hyphenpenalty=10000 #1\par}\vspace{0.5pt}{\fontsize{7.45}{8.7}\selectfont\color{muted}\RaggedRight #2\par}{\fontsize{7.35}{8.5}\selectfont\color{muted}\hfill #3}\par}
+\newcommand{\sideproject}[3]{{\fontsize{8.1}{9.4}\selectfont\bfseries\RaggedRight\hyphenpenalty=10000 #1\par}{\fontsize{7.25}{8.5}\selectfont\color{muted}\hfill #2}\par\vspace{0.8pt}{\fontsize{7.45}{8.9}\selectfont\RaggedRight #3\par}}
+\newcommand{\contactcell}[2]{{\fontsize{7.55}{8.6}\selectfont\bfseries\color{ink} #1}\par{\fontsize{7.15}{8.3}\selectfont\color{muted} #2}}
+\newcommand{\experience}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}{\fontsize{9.35}{10.6}\selectfont\bfseries #1} & {\fontsize{7.45}{8.6}\selectfont\color{muted} #2}\\[-0.6pt]\end{tabularx}
+  {\fontsize{8.05}{9.25}\selectfont\color{muted} #3}\par\vspace{1.0pt}{\fontsize{8.15}{9.35}\selectfont #4}\par\vspace{3.0pt}}
+
+\begin{document}
+\color{ink}
+\noindent
+\begin{minipage}[t]{0.305\textwidth}
+\vspace{0pt}
+\begin{center}\includegraphics[width=3.95cm,height=3.95cm,keepaspectratio]{linson_cv_photo.png}\end{center}
+\vspace{-1pt}
+
+\sideheading{Studium}
+\sideentry{M.Sc. Renewable Energy and Data Engineering}{Hochschule Offenburg, Deutschland}{2023--2025}
+\vspace{4.5pt}
+\sideentry{B.Tech. Electrical and Electronics Engineering}{University of Kerala, Indien}{2014--2018}
+
+\sideheading{Ausgewählte Projekte}
+\sideproject{Genauigkeitsbewertung von Energiezählern}{seit 2025}{Analyse historischer Zählerprüfdaten zur Bewertung von Messabweichung, Langzeitdrift und Stabilität; KPI- und Reporting-Workflows mit Python und SQL.}
+\vspace{4.5pt}
+\sideproject{Automatisiertes 3-Phasen-Prüflabor}{seit 2026}{Integration programmierbarer Leistungsquellen, elektronischer Lasten, Referenzmesstechnik, Energiezähler und Datenbanken mit Node-RED, Modbus, RS-485 und GPIB/VISA.}
+\vspace{4.5pt}
+\sideproject{Digitaler Zwilling - Effizienzfilter}{2024--2025}{Messbasierte Parameteridentifikation sowie Entwicklung und Validierung von LTspice- und MATLAB/Simscape-Modellen.}
+
+\sideheading{Weiterbildung}
+{\fontsize{8.1}{9.4}\selectfont\bfseries Python for Data Science}\par
+{\fontsize{7.45}{8.7}\selectfont\color{muted} DataCamp}\par
+
+\sideheading{Sprachen}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+{\fontsize{7.45}{8.8}\selectfont Malayalam - Muttersprache} & {\fontsize{7.45}{8.8}\selectfont Englisch - C1}\\[2.5pt]
+{\fontsize{7.45}{8.8}\selectfont Deutsch - B2} & {\fontsize{7.45}{8.8}\selectfont Tamil - B1}\\[2.5pt]
+{\fontsize{7.45}{8.8}\selectfont Hindi - B1} & \\
+\end{tabularx}
+
+\sideheading{Zusätzliche Angaben}
+{\fontsize{8.0}{9.3}\selectfont\bfseries Führerschein}\par
+{\fontsize{7.45}{8.8}\selectfont Deutscher Führerschein, Klasse B197}\par
+\vspace{4pt}
+{\fontsize{8.0}{9.3}\selectfont\bfseries Wohnort}\par
+{\fontsize{7.45}{8.8}\selectfont Ortenberg, Deutschland}\par
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.655\textwidth}
+\vspace{0pt}
+{\fontsize{24}{26}\selectfont\bfseries\color{ink} LINSON PHILIP}\par
+\vspace{3pt}
+{\fontsize{11.2}{12.7}\selectfont\bfseries Elektroingenieur | Energiedaten \& Prüfstandsautomatisierung}\par
+\vspace{1.5pt}
+{\fontsize{8.5}{9.8}\selectfont\color{accent} Energiesysteme | Energiezählerprüfung | Testlabor-Automatisierung}\par
+\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}X X X@{}}
+\contactcell{Telefon}{+49 152 10726235} &
+\contactcell{E-Mail}{\href{mailto:linsonphilip5@gmail.com}{linsonphilip5@gmail.com}} &
+\contactcell{LinkedIn}{\href{https://www.linkedin.com/in/linson-philip}{linkedin.com/in/linson-philip}}\\[6pt]
+\contactcell{Portfolio}{\href{https://linsphilip.github.io/linson-portfolio/}{linsphilip.github.io/linson-portfolio}} &
+\contactcell{Wohnort}{Ortenberg, Deutschland} &
+\contactcell{Mobilität}{Führerschein B197}\\
+\end{tabularx}
+
+\mainheading{Kurzprofil}
+{\fontsize{8.45}{9.8}\selectfont
+Elektroingenieur mit Erfahrung im Betrieb von Hochspannungsnetzen, in der Energiezählerprüfung, Analyse elektrischer Messdaten, Entwicklung digitaler Zwillinge und Laborautomatisierung. Derzeit tätig in der großskaligen Analyse historischer Zählerprüfdaten und der Integration eines automatisierten dreiphasigen Prüfsystems an der Hochschule Offenburg.}
+
+\mainheading{Berufserfahrung}
+\experience{Akademischer Mitarbeiter}{seit 05/2025}{Institute for Sustainable Energy Systems (INES), Hochschule Offenburg}{%
+\begin{itemize}
+  \item Analyse von mehr als \textbf{2 Millionen historischen Energiezähler-Prüfdatensätzen} mit Python, Pandas und SQL Server zur Bewertung von Messabweichung, Langzeitdrift und gerätebezogener Stabilität.
+  \item Entwicklung von Datenpipelines für Prüfpunktharmonisierung, Validierung, KPI-Erstellung und automatisierte technische Berichterstellung.
+  \item Konzeption und Integration eines \textbf{automatisierten dreiphasigen Energiezähler-Prüflabors} mit programmierbarer Leistungsquelle, elektronischen Lasten, Referenzmesstechnik, Tarifzählern und Klimaprüftechnik.
+  \item Entwicklung von Steuerungs- und Datenerfassungsabläufen mit Python, Node-RED, Modbus TCP/RTU, RS-485, GPIB/VISA, MySQL und InfluxDB.
+\end{itemize}}
+
+\experience{Masterand - Entwicklung eines digitalen Zwillings}{09/2024--02/2025}{Livarsa GmbH \& Hochschule Offenburg}{%
+\begin{itemize}
+  \item Entwicklung und Validierung eines digitalen Zwillings zur Bewertung des Betriebsverhaltens und Energieeinsparpotenzials eines industriellen elektrischen Effizienzfiltersystems.
+  \item Durchführung elektrischer Messungen und Parameteridentifikation; Modellierung mit LTspice und MATLAB/Simscape unter Verwendung realer Messdaten.
+\end{itemize}}
+
+\experience{Studentische Hilfskraft - Mikro-PV-Monitoring}{12/2023--09/2024}{Institute for Sustainable Energy Systems, Hochschule Offenburg}{%
+\begin{itemize}
+  \item Unterstützung bei Installation und Monitoring von Mikro-PV-Anlagen sowie Auswertung betrieblicher Energiedaten.
+  \item Entwicklung Python-basierter Workflows zur Datenaufbereitung und technischen Analyse.
+\end{itemize}}
+
+\experience{Elektroingenieur - EHV-Umspannwerksbetrieb}{09/2018--10/2021}{Kerala State Electricity Board, Kerala, Indien}{%
+\begin{itemize}
+  \item Betrieb und Überwachung von 11--110-kV-Umspannwerken und Übertragungsanlagen einschließlich Schalthandlungen und Betriebsdokumentation.
+  \item Arbeit mit Leistungstransformatoren, Leistungsschaltern, Trennschaltern, Schutzrelais, Batteriesystemen und DC-Hilfsversorgung; Unterstützung bei Isolations- und Zustandsprüfungen.
+  \item Koordination von Wartungen, geplanten Abschaltungen und Wiederinbetriebnahmen sowie Überwachung von Spannung, Strom, Belastung und Energiefluss.
+\end{itemize}}
+
+\mainheading{Technische Kenntnisse}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\fontsize{8.05}{9.2}\selectfont}p{2.9cm} >{\fontsize{8.0}{9.25}\selectfont\RaggedRight\arraybackslash}X@{}}
+Energietechnik \& Messtechnik & Energiesysteme, Energiezählerprüfung, elektrische Messtechnik, Dreiphasensysteme, Netzqualität, EHV-Umspannwerke, Transformatoren, Schaltanlagen, Schutzsysteme\\[2.8pt]
+Daten \& Programmierung & Python, SQL, Pandas, NumPy, Scikit-learn, statistische Analyse, Zeitreihenanalyse, KPI-Entwicklung\\[2.8pt]
+Automatisierung & Node-RED, Datenerfassung, automatisierte Prüfabläufe, Geräteintegration, MySQL, InfluxDB\\[2.8pt]
+Kommunikation & Modbus TCP/RTU, RS-485, GPIB, VISA, Ethernet/TCP-IP\\[2.8pt]
+Modellierung & MATLAB, Simulink, Simscape Electrical, LTspice, digitale Zwillinge, Parameteridentifikation\\
+\end{tabularx}
+\end{minipage}
+\end{document}

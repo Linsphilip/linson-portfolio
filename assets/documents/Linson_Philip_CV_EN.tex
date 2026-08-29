@@ -1,103 +1,190 @@
 \documentclass[10pt,a4paper]{article}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \usepackage{lmodern}
-\usepackage[a4paper,top=1.25cm,bottom=1.15cm,left=1.35cm,right=1.35cm]{geometry}
-\usepackage{microtype,enumitem,tabularx,titlesec,xcolor,hyperref,array}
-\definecolor{navy}{HTML}{17365D}
-\definecolor{muted}{HTML}{4F5B66}
-\hypersetup{hidelinks}
+\usepackage[a4paper,left=0.85cm,right=0.85cm,top=0.72cm,bottom=0.72cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{sidebar}{HTML}{F1F1F1}
+\definecolor{ink}{HTML}{2F2F2F}
+\definecolor{muted}{HTML}{606060}
+\definecolor{line}{HTML}{8A8A8A}
+\definecolor{accent}{HTML}{17365D}
+
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlist[itemize]{leftmargin=1.25em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
-\titleformat{\section}{\large\bfseries\color{navy}}{}{0pt}{}[\vspace{-4pt}\color{navy}\rule{\linewidth}{0.45pt}]
-\titlespacing*{\section}{0pt}{7pt}{4pt}
-\newcommand{\entry}[4]{\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{3.1cm}@{}}\textbf{#1} & \textbf{#2}\\\textit{#3} & \textit{#4}\end{tabularx}\vspace{1pt}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=1.2pt,
+  topsep=1.6pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+% Sidebar background. Fixed width prevents any visual ambiguity at the column edge.
+\AddToHook{shipout/background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[sidebar] (current page.north west) rectangle ([xshift=6.72cm]current page.south west);
+  \end{tikzpicture}%
+}
+
+\newcommand{\sideheading}[1]{%
+  \vspace{7pt}%
+  {\fontsize{11.4}{12.8}\selectfont\bfseries\color{ink} #1}\par
+  \vspace{1.6pt}\color{line}\rule{\linewidth}{0.5pt}\color{ink}\vspace{3.5pt}
+}
+
+\newcommand{\mainheading}[1]{%
+  \vspace{7pt}%
+  {\fontsize{12.8}{14.2}\selectfont\bfseries\color{ink} #1}\par
+  \vspace{1.7pt}\color{line}\rule{\linewidth}{0.55pt}\color{ink}\vspace{4pt}
+}
+
+% Robust sidebar entry: title and date are NEVER placed on the same line.
+\newcommand{\sideentry}[3]{%
+  {\fontsize{8.2}{9.5}\selectfont\bfseries\RaggedRight\hyphenpenalty=10000 #1\par}
+  \vspace{0.5pt}
+  {\fontsize{7.45}{8.7}\selectfont\color{muted}\RaggedRight #2\par}
+  {\fontsize{7.35}{8.5}\selectfont\color{muted}\hfill #3}\par
+}
+
+\newcommand{\sideproject}[3]{%
+  {\fontsize{8.1}{9.4}\selectfont\bfseries\RaggedRight\hyphenpenalty=10000 #1\par}
+  {\fontsize{7.25}{8.5}\selectfont\color{muted}\hfill #2}\par
+  \vspace{0.8pt}
+  {\fontsize{7.45}{8.9}\selectfont\RaggedRight #3\par}
+}
+
+\newcommand{\contactcell}[2]{%
+  {\fontsize{7.55}{8.6}\selectfont\bfseries\color{ink} #1}\par
+  {\fontsize{7.15}{8.3}\selectfont\color{muted} #2}
+}
+
+\newcommand{\experience}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    {\fontsize{9.35}{10.6}\selectfont\bfseries #1} &
+    {\fontsize{7.45}{8.6}\selectfont\color{muted} #2}\\[-0.6pt]
+  \end{tabularx}
+  {\fontsize{8.05}{9.25}\selectfont\color{muted} #3}\par
+  \vspace{1.0pt}
+  {\fontsize{8.15}{9.35}\selectfont #4}\par
+  \vspace{3.0pt}
+}
+
 \begin{document}
+\color{ink}
+
+\noindent
+\begin{minipage}[t]{0.305\textwidth}
+\vspace{0pt}
 \begin{center}
-{\LARGE\bfseries\color{navy} Linson Philip}\\[2pt]
-{\large Electrical \& Energy Data Engineer}\\[4pt]
-Ortenberg, Germany \;|\; +49 152 10726235 \;|\; \href{mailto:linsonphilip5@gmail.com}{linsonphilip5@gmail.com}\\[1pt]
-\href{https://www.linkedin.com/in/linson-philip}{linkedin.com/in/linson-philip} \;|\; \href{https://github.com/linsphilip}{github.com/linsphilip}
+  \includegraphics[width=3.95cm,height=3.95cm,keepaspectratio]{linson_cv_photo.png}
 \end{center}
+\vspace{-1pt}
 
-\section{Professional Profile}
-Electrical and energy-data engineer with experience in EHV power-system operations, energy-meter testing, measurement-data analytics, digital-twin development and laboratory automation. Currently working on data-driven assessment of electricity meters and automated three-phase test systems. Hands-on experience with Python, SQL, Node-RED, Modbus, RS-485, GPIB/VISA, MATLAB/Simulink and industrial measurement equipment.
+\sideheading{Education}
+\sideentry{M.Sc. Renewable Energy and Data Engineering}{Hochschule Offenburg, Germany}{2023--2025}
+\vspace{4.5pt}
+\sideentry{B.Tech. Electrical and Electronics Engineering}{University of Kerala, India}{2014--2018}
 
-\section{Core Competencies}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
-Power Systems & Power systems, energy-meter testing, accuracy assessment, electrical measurements, three-phase systems, power quality\\
-Data Analysis & Python, SQL, Pandas, NumPy, data validation, KPI development, statistical and time-series analysis\\
-Lab Automation & Node-RED, automated test sequences, data acquisition, equipment monitoring, communication handling\\
-Communication & Modbus TCP/RTU, RS-485, GPIB, VISA, Ethernet-based laboratory integration\\
-Modelling & MATLAB, Simulink, Simscape, LTspice, digital twins, parameter identification\\
-Databases & Microsoft SQL Server, MySQL, InfluxDB\\
+\sideheading{Selected Projects}
+\sideproject{Energy-Meter Accuracy Assessment}{2025--present}{Historical meter-test data analysis for measurement error, long-term drift and stability assessment; KPI and reporting workflows using Python and SQL.}
+\vspace{4.5pt}
+\sideproject{Automated 3-Phase Test Laboratory}{2026--present}{Integration of programmable power equipment, electronic loads, reference measurement, energy meters and databases using Node-RED, Modbus, RS-485 and GPIB/VISA.}
+\vspace{4.5pt}
+\sideproject{Digital Twin - Efficiency Filter}{2024--2025}{Measurement-based parameter identification and development/validation of LTspice and MATLAB/Simscape models.}
+
+\sideheading{Training}
+{\fontsize{8.1}{9.4}\selectfont\bfseries Python for Data Science}\par
+{\fontsize{7.45}{8.7}\selectfont\color{muted} DataCamp}\par
+
+\sideheading{Languages}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+{\fontsize{7.45}{8.8}\selectfont Malayalam - Native} & {\fontsize{7.45}{8.8}\selectfont English - C1}\\[2.5pt]
+{\fontsize{7.45}{8.8}\selectfont German - B2} & {\fontsize{7.45}{8.8}\selectfont Tamil - B1}\\[2.5pt]
+{\fontsize{7.45}{8.8}\selectfont Hindi - B1} & \\
 \end{tabularx}
 
-\section{Professional Experience}
-\entry{Academic Research Associate / Research Engineer}{05/2025--Present}{Institute for Sustainable Energy Systems (INES), Hochschule Offenburg}{Offenburg, Germany}
-\begin{itemize}
-\item Analyse more than two million historical energy-meter test records using Python, Pandas and SQL Server to evaluate measurement error, long-term behaviour and device-level performance.
-\item Develop data-processing workflows for test-point harmonisation, measurement validation, KPI generation, repeated-meter analysis and automated technical reporting.
-\item Design and integrate an automated three-phase energy-meter test laboratory with programmable power equipment, electronic loads, reference measurement systems, tariff meters and climatic test equipment.
-\item Develop equipment-control and data-acquisition workflows using Python, Node-RED, Modbus TCP/RTU, RS-485 and GPIB/VISA, with structured measurement storage in MySQL and InfluxDB.
-\item Define reproducible test sequences across different current levels, phase configurations and power-factor conditions in collaboration with academic and industrial project partners.
-\end{itemize}
+\sideheading{Additional Information}
+{\fontsize{8.0}{9.3}\selectfont\bfseries Driving Licence}\par
+{\fontsize{7.45}{8.8}\selectfont German driving licence, Class B197}\par
+\vspace{4pt}
+{\fontsize{8.0}{9.3}\selectfont\bfseries Location}\par
+{\fontsize{7.45}{8.8}\selectfont Ortenberg, Germany}\par
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.655\textwidth}
+\vspace{0pt}
+{\fontsize{24}{26}\selectfont\bfseries\color{ink} LINSON PHILIP}\par
+\vspace{3pt}
+{\fontsize{11.2}{12.7}\selectfont\bfseries Electrical \& Energy Data Engineer}\par
+\vspace{1.5pt}
+{\fontsize{8.5}{9.8}\selectfont\color{accent} Power Systems | Energy Meter Testing | Test Lab Automation}\par
+\vspace{6pt}
 
-\entry{Master's Thesis Student -- Digital Twin Development}{09/2024--02/2025}{Livarsa GmbH \& Hochschule Offenburg}{Germany}
-\begin{itemize}
-\item Developed a measurement-based digital twin to assess the operating behaviour and energy-saving potential of an industrial passive electrical efficiency filter.
-\item Conducted electrical measurements and parameter identification to derive model parameters and validate simulation behaviour.
-\item Built and validated LTspice and MATLAB/Simscape models using real measurement data and compared simulated and measured system responses.
-\end{itemize}
-
-\entry{Student Research Assistant -- Micro-PV Monitoring}{12/2023--09/2024}{Institute for Sustainable Energy Systems, Hochschule Offenburg}{Offenburg, Germany}
-\begin{itemize}
-\item Supported installation, monitoring and maintenance of micro-photovoltaic systems and collected operational energy data.
-\item Developed Python-based workflows for data preparation, system-performance analysis and technical reporting.
-\end{itemize}
-
-\newpage
-\entry{Electrical Engineer -- EHV Substation Operations}{09/2018--10/2021}{Kerala State Electricity Board}{Kerala, India}
-\begin{itemize}
-\item Operated and monitored 11--110 kV substations and transmission equipment to support safe and reliable electricity supply.
-\item Performed switching operations, equipment inspections, insulation-resistance testing and operational documentation.
-\item Worked with power transformers, circuit breakers, isolators, protection relays, control panels, battery systems and auxiliary supplies.
-\item Monitored voltage, current, loading and energy import/export conditions and supported maintenance, shutdown and restoration activities.
-\end{itemize}
-
-\section{Selected Engineering Projects}
-\textbf{Data-Driven Accuracy Assessment of Energy Meters} \hfill \textit{2025--Present}\\[-2pt]
-Development of a reproducible workflow for historical meter-test data covering test-point harmonisation, measurement-error analysis, long-term stability assessment, device-level KPIs and automated reporting.\\[4pt]
-
-\textbf{Automated Three-Phase Energy-Meter Test Laboratory} \hfill \textit{2026--Present}\\[-2pt]
-Integration of programmable power equipment, electronic loads, reference measurements, energy meters and databases through Python, Node-RED, Modbus TCP/RTU, RS-485 and GPIB/VISA.\\[4pt]
-
-\textbf{Digital Twin for Electrical Efficiency Filter Assessment} \hfill \textit{2024--2025}\\[-2pt]
-Measurement-based parameter identification and validation of simulation models for pre-installation assessment of an industrial electrical efficiency system.
-
-\section{Education}
-\entry{M.Sc. Renewable Energy and Data Engineering}{2023--2025}{Hochschule Offenburg}{Germany}
-Master's thesis: Digital-twin development for performance and energy-saving assessment of an industrial electrical efficiency system.\\[3pt]
-\entry{B.Tech. Electrical and Electronics Engineering}{2014--2018}{University of Kerala}{India}
-
-\section{Technical Skills}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
-Programming & Python, SQL, Pandas, NumPy, Scikit-learn, statistical analysis, time-series analysis\\
-Automation & Node-RED, Modbus TCP/RTU, RS-485, GPIB, VISA, data acquisition\\
-Engineering Tools & MATLAB, Simulink, Simscape, LTspice\\
-Measurement & Energy-meter testing, electrical measurements, power systems, EHV substations, transformers, switchgear, protection systems\\
-Databases & Microsoft SQL Server, MySQL, InfluxDB\\
+\begin{tabularx}{\linewidth}{@{}X X X@{}}
+\contactcell{Phone}{+49 152 10726235} &
+\contactcell{Email}{\href{mailto:linsonphilip5@gmail.com}{linsonphilip5@gmail.com}} &
+\contactcell{LinkedIn}{\href{https://www.linkedin.com/in/linson-philip}{linkedin.com/in/linson-philip}}\\[6pt]
+\contactcell{Portfolio}{\href{https://linsphilip.github.io/linson-portfolio/}{linsphilip.github.io/linson-portfolio}} &
+\contactcell{Location}{Ortenberg, Germany} &
+\contactcell{Mobility}{Driving licence B197}\\
 \end{tabularx}
 
-\section{Training}
-Python for Data Science (DataCamp)
+\mainheading{Professional Profile}
+{\fontsize{8.45}{9.8}\selectfont
+Electrical and energy-data engineer with experience in EHV power-system operations, energy-meter testing, measurement-data analysis, digital-twin development and laboratory automation. Currently working on large-scale meter-test data analysis and automated three-phase test-system integration at Hochschule Offenburg.}
 
-\section{Languages \& Additional Information}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
-Languages & Malayalam (Native), English (C1), German (B2), Tamil (B1), Hindi (B1)\\
-Driving Licence & German driving licence, Class B197\\
-Location & Ortenberg, Germany\\
+\mainheading{Professional Experience}
+
+\experience{Academic Research Associate}{05/2025--present}{Institute for Sustainable Energy Systems (INES), Hochschule Offenburg}{%
+\begin{itemize}
+  \item Analyse more than \textbf{2 million historical energy-meter test records} using Python, Pandas and SQL Server to assess measurement error, long-term drift and device-level stability.
+  \item Develop data pipelines for test-point harmonisation, validation, KPI generation and automated technical reporting.
+  \item Design and integrate an \textbf{automated three-phase energy-meter test laboratory} combining programmable power equipment, electronic loads, reference measurement, tariff meters and climate-testing equipment.
+  \item Develop equipment-control and data-acquisition workflows using Python, Node-RED, Modbus TCP/RTU, RS-485, GPIB/VISA, MySQL and InfluxDB.
+\end{itemize}}
+
+\experience{Master's Thesis Student - Digital Twin Development}{09/2024--02/2025}{Livarsa GmbH \& Hochschule Offenburg}{%
+\begin{itemize}
+  \item Developed and validated a digital twin to assess operating behaviour and energy-saving potential of an industrial electrical efficiency filter system.
+  \item Performed electrical measurements and parameter identification; modelled the system with LTspice and MATLAB/Simscape using real measurement data.
+\end{itemize}}
+
+\experience{Student Research Assistant - Micro-PV Monitoring}{12/2023--09/2024}{Institute for Sustainable Energy Systems, Hochschule Offenburg}{%
+\begin{itemize}
+  \item Supported installation and monitoring of micro-PV systems and evaluated operational energy data.
+  \item Developed Python-based workflows for data preparation and technical analysis.
+\end{itemize}}
+
+\experience{Electrical Engineer - EHV Substation Operations}{09/2018--10/2021}{Kerala State Electricity Board, Kerala, India}{%
+\begin{itemize}
+  \item Operated and monitored 11--110 kV substations and transmission equipment, including switching operations and operational documentation.
+  \item Worked with power transformers, circuit breakers, isolators, protection relays, batteries and DC auxiliary systems; supported insulation and condition testing.
+  \item Coordinated maintenance, planned shutdowns and restoration activities while monitoring voltage, current, loading and energy flow.
+\end{itemize}}
+
+\mainheading{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries\fontsize{8.05}{9.2}\selectfont}p{2.9cm} >{\fontsize{8.0}{9.25}\selectfont\RaggedRight\arraybackslash}X@{}}
+Power \& Measurement & Power systems, energy-meter testing, electrical measurements, three-phase systems, power quality, EHV substations, transformers, switchgear, protection systems\\[2.8pt]
+Data \& Programming & Python, SQL, Pandas, NumPy, Scikit-learn, statistical analysis, time-series analysis, KPI development\\[2.8pt]
+Automation & Node-RED, data acquisition, automated test sequences, equipment integration, MySQL, InfluxDB\\[2.8pt]
+Communication & Modbus TCP/RTU, RS-485, GPIB, VISA, Ethernet/TCP-IP\\[2.8pt]
+Modelling & MATLAB, Simulink, Simscape Electrical, LTspice, digital twins, parameter identification\\
 \end{tabularx}
+\end{minipage}
+
 \end{document}
