@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,top=1.25cm,bottom=1.15cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage{microtype,enumitem,tabularx,titlesec,xcolor,hyperref,array}
+\definecolor{navy}{HTML}{17365D}
+\definecolor{muted}{HTML}{4F5B66}
+\hypersetup{hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries\color{navy}}{}{0pt}{}[\vspace{-4pt}\color{navy}\rule{\linewidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\newcommand{\entry}[4]{\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{3.1cm}@{}}\textbf{#1} & \textbf{#2}\\\textit{#3} & \textit{#4}\end{tabularx}\vspace{1pt}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{navy} Linson Philip}\\[2pt]
+{\large Electrical \& Energy Data Engineer}\\[4pt]
+Ortenberg, Germany \;|\; +49 152 10726235 \;|\; \href{mailto:linsonphilip5@gmail.com}{linsonphilip5@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/linson-philip}{linkedin.com/in/linson-philip} \;|\; \href{https://github.com/linsphilip}{github.com/linsphilip}
+\end{center}
+
+\section{Professional Profile}
+Electrical and energy-data engineer with experience in EHV power-system operations, energy-meter testing, measurement-data analytics, digital-twin development and laboratory automation. Currently working on data-driven assessment of electricity meters and automated three-phase test systems. Hands-on experience with Python, SQL, Node-RED, Modbus, RS-485, GPIB/VISA, MATLAB/Simulink and industrial measurement equipment.
+
+\section{Core Competencies}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Power Systems & Power systems, energy-meter testing, accuracy assessment, electrical measurements, three-phase systems, power quality\\
+Data Analysis & Python, SQL, Pandas, NumPy, data validation, KPI development, statistical and time-series analysis\\
+Lab Automation & Node-RED, automated test sequences, data acquisition, equipment monitoring, communication handling\\
+Communication & Modbus TCP/RTU, RS-485, GPIB, VISA, Ethernet-based laboratory integration\\
+Modelling & MATLAB, Simulink, Simscape, LTspice, digital twins, parameter identification\\
+Databases & Microsoft SQL Server, MySQL, InfluxDB\\
+\end{tabularx}
+
+\section{Professional Experience}
+\entry{Academic Research Associate / Research Engineer}{05/2025--Present}{Institute for Sustainable Energy Systems (INES), Hochschule Offenburg}{Offenburg, Germany}
+\begin{itemize}
+\item Analyse more than two million historical energy-meter test records using Python, Pandas and SQL Server to evaluate measurement error, long-term behaviour and device-level performance.
+\item Develop data-processing workflows for test-point harmonisation, measurement validation, KPI generation, repeated-meter analysis and automated technical reporting.
+\item Design and integrate an automated three-phase energy-meter test laboratory with programmable power equipment, electronic loads, reference measurement systems, tariff meters and climatic test equipment.
+\item Develop equipment-control and data-acquisition workflows using Python, Node-RED, Modbus TCP/RTU, RS-485 and GPIB/VISA, with structured measurement storage in MySQL and InfluxDB.
+\item Define reproducible test sequences across different current levels, phase configurations and power-factor conditions in collaboration with academic and industrial project partners.
+\end{itemize}
+
+\entry{Master's Thesis Student -- Digital Twin Development}{09/2024--02/2025}{Livarsa GmbH \& Hochschule Offenburg}{Germany}
+\begin{itemize}
+\item Developed a measurement-based digital twin to assess the operating behaviour and energy-saving potential of an industrial passive electrical efficiency filter.
+\item Conducted electrical measurements and parameter identification to derive model parameters and validate simulation behaviour.
+\item Built and validated LTspice and MATLAB/Simscape models using real measurement data and compared simulated and measured system responses.
+\end{itemize}
+
+\entry{Student Research Assistant -- Micro-PV Monitoring}{12/2023--09/2024}{Institute for Sustainable Energy Systems, Hochschule Offenburg}{Offenburg, Germany}
+\begin{itemize}
+\item Supported installation, monitoring and maintenance of micro-photovoltaic systems and collected operational energy data.
+\item Developed Python-based workflows for data preparation, system-performance analysis and technical reporting.
+\end{itemize}
+
+\newpage
+\entry{Electrical Engineer -- EHV Substation Operations}{09/2018--10/2021}{Kerala State Electricity Board}{Kerala, India}
+\begin{itemize}
+\item Operated and monitored 11--110 kV substations and transmission equipment to support safe and reliable electricity supply.
+\item Performed switching operations, equipment inspections, insulation-resistance testing and operational documentation.
+\item Worked with power transformers, circuit breakers, isolators, protection relays, control panels, battery systems and auxiliary supplies.
+\item Monitored voltage, current, loading and energy import/export conditions and supported maintenance, shutdown and restoration activities.
+\end{itemize}
+
+\section{Selected Engineering Projects}
+\textbf{Data-Driven Accuracy Assessment of Energy Meters} \hfill \textit{2025--Present}\\[-2pt]
+Development of a reproducible workflow for historical meter-test data covering test-point harmonisation, measurement-error analysis, long-term stability assessment, device-level KPIs and automated reporting.\\[4pt]
+
+\textbf{Automated Three-Phase Energy-Meter Test Laboratory} \hfill \textit{2026--Present}\\[-2pt]
+Integration of programmable power equipment, electronic loads, reference measurements, energy meters and databases through Python, Node-RED, Modbus TCP/RTU, RS-485 and GPIB/VISA.\\[4pt]
+
+\textbf{Digital Twin for Electrical Efficiency Filter Assessment} \hfill \textit{2024--2025}\\[-2pt]
+Measurement-based parameter identification and validation of simulation models for pre-installation assessment of an industrial electrical efficiency system.
+
+\section{Education}
+\entry{M.Sc. Renewable Energy and Data Engineering}{2023--2025}{Hochschule Offenburg}{Germany}
+Master's thesis: Digital-twin development for performance and energy-saving assessment of an industrial electrical efficiency system.\\[3pt]
+\entry{B.Tech. Electrical and Electronics Engineering}{2014--2018}{University of Kerala}{India}
+
+\section{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Programming & Python, SQL, Pandas, NumPy, Scikit-learn, statistical analysis, time-series analysis\\
+Automation & Node-RED, Modbus TCP/RTU, RS-485, GPIB, VISA, data acquisition\\
+Engineering Tools & MATLAB, Simulink, Simscape, LTspice\\
+Measurement & Energy-meter testing, electrical measurements, power systems, EHV substations, transformers, switchgear, protection systems\\
+Databases & Microsoft SQL Server, MySQL, InfluxDB\\
+\end{tabularx}
+
+\section{Training}
+Python for Data Science (DataCamp)
+
+\section{Languages \& Additional Information}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Languages & Malayalam (Native), English (C1), German (B2), Tamil (B1), Hindi (B1)\\
+Driving Licence & German driving licence, Class B197\\
+Location & Ortenberg, Germany\\
+\end{tabularx}
+\end{document}

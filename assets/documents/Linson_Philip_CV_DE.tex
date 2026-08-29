@@ -1,0 +1,103 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,top=1.25cm,bottom=1.15cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage{microtype,enumitem,tabularx,titlesec,xcolor,hyperref,array}
+\definecolor{navy}{HTML}{17365D}
+\hypersetup{hidelinks}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1pt,topsep=2pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries\color{navy}}{}{0pt}{}[\vspace{-4pt}\color{navy}\rule{\linewidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\newcommand{\entry}[4]{\begin{tabularx}{\textwidth}{@{}X>{\raggedleft\arraybackslash}p{3.1cm}@{}}\textbf{#1} & \textbf{#2}\\\textit{#3} & \textit{#4}\end{tabularx}\vspace{1pt}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{navy} Linson Philip}\\[2pt]
+{\large Elektroingenieur | Energiedatenanalyse \& Prüfstandsautomatisierung}\\[4pt]
+Ortenberg, Deutschland \;|\; +49 152 10726235 \;|\; \href{mailto:linsonphilip5@gmail.com}{linsonphilip5@gmail.com}\\[1pt]
+\href{https://www.linkedin.com/in/linson-philip}{linkedin.com/in/linson-philip} \;|\; \href{https://github.com/linsphilip}{github.com/linsphilip}
+\end{center}
+
+\section{Kurzprofil}
+Elektroingenieur mit Erfahrung im Betrieb von Hochspannungsnetzen, in der Prüfung von Energiezählern, der Analyse elektrischer Messdaten, der Entwicklung digitaler Zwillinge sowie der Automatisierung elektrischer Prüfsysteme. Aktuell arbeite ich an datengestützten Methoden zur Bewertung von Energiezählern und an automatisierten dreiphasigen Prüfsystemen. Praktische Kenntnisse in Python, SQL, Node-RED, Modbus, RS-485, GPIB/VISA, MATLAB/Simulink und industrieller Messtechnik.
+
+\section{Kernkompetenzen}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Energietechnik & Energiesysteme, Energiezählerprüfung, Genauigkeitsbewertung, elektrische Messtechnik, Dreiphasensysteme, Netzqualität\\
+Datenanalyse & Python, SQL, Pandas, NumPy, Datenvalidierung, KPI-Entwicklung, statistische Analysen und Zeitreihenanalysen\\
+Prüfstand & Node-RED, automatisierte Prüfabläufe, Datenerfassung, Geräteüberwachung, Kommunikationsbehandlung\\
+Kommunikation & Modbus TCP/RTU, RS-485, GPIB, VISA, Ethernet-basierte Laborintegration\\
+Simulation & MATLAB, Simulink, Simscape, LTspice, digitale Zwillinge, Parameteridentifikation\\
+Datenbanken & Microsoft SQL Server, MySQL, InfluxDB\\
+\end{tabularx}
+
+\section{Berufserfahrung}
+\entry{Akademischer Mitarbeiter / Forschungsingenieur}{seit 05/2025}{Institute for Sustainable Energy Systems (INES), Hochschule Offenburg}{Offenburg, Deutschland}
+\begin{itemize}
+\item Analyse von mehr als zwei Millionen historischen Energiezähler-Prüfdatensätzen mit Python, Pandas und SQL Server zur Bewertung von Messabweichungen, Langzeitverhalten und gerätebezogener Leistungsfähigkeit.
+\item Entwicklung von Datenverarbeitungsprozessen für die Harmonisierung von Prüfpunkten, Messwertvalidierung, KPI-Erstellung, Analyse wiederholt geprüfter Zähler und automatisierte technische Berichterstellung.
+\item Konzeption und Integration eines automatisierten dreiphasigen Energiezähler-Prüflabors mit programmierbarer Leistungsquelle, elektronischen Lasten, Referenzmessgeräten, Tarifzählern und Klimaprüftechnik.
+\item Entwicklung von Steuerungs- und Datenerfassungsabläufen mit Python, Node-RED, Modbus TCP/RTU, RS-485 und GPIB/VISA sowie strukturierte Messdatenspeicherung in MySQL und InfluxDB.
+\item Definition reproduzierbarer Prüfabläufe für unterschiedliche Stromstärken, Phasenkonfigurationen und Leistungsfaktorbedingungen in Zusammenarbeit mit wissenschaftlichen und industriellen Projektpartnern.
+\end{itemize}
+
+\entry{Masterand -- Entwicklung eines digitalen Zwillings}{09/2024--02/2025}{Livarsa GmbH \& Hochschule Offenburg}{Deutschland}
+\begin{itemize}
+\item Entwicklung eines messdatenbasierten digitalen Zwillings zur Bewertung des Betriebsverhaltens und des Energieeinsparpotenzials eines industriellen passiven elektrischen Effizienzfilters.
+\item Durchführung elektrischer Messungen und Parameteridentifikation zur Bestimmung von Modellparametern und zur Validierung des Simulationsverhaltens.
+\item Entwicklung und Validierung von LTspice- und MATLAB/Simscape-Modellen unter Verwendung realer Messdaten sowie Vergleich von Simulation und Messung.
+\end{itemize}
+
+\entry{Studentische Hilfskraft -- Monitoring von Mikro-PV-Anlagen}{12/2023--09/2024}{Institute for Sustainable Energy Systems, Hochschule Offenburg}{Offenburg, Deutschland}
+\begin{itemize}
+\item Unterstützung bei Installation, Monitoring und Wartung von Mikro-Photovoltaikanlagen sowie Erfassung betrieblicher Energiedaten.
+\item Entwicklung Python-basierter Prozesse zur Datenaufbereitung, Leistungsbewertung und technischen Berichterstellung.
+\end{itemize}
+
+\newpage
+\entry{Elektroingenieur -- Umspannwerksbetrieb}{09/2018--10/2021}{Kerala State Electricity Board}{Kerala, Indien}
+\begin{itemize}
+\item Betrieb und Überwachung von Umspannwerken und Energieübertragungsanlagen im Spannungsbereich von 11--110 kV zur Gewährleistung einer sicheren und zuverlässigen Stromversorgung.
+\item Durchführung von Schalthandlungen, Anlageninspektionen, Isolationswiderstandsmessungen und betrieblicher Dokumentation.
+\item Arbeit mit Leistungstransformatoren, Leistungsschaltern, Trennschaltern, Schutzrelais, Steuerungstafeln, Batteriesystemen und Hilfsstromversorgungen.
+\item Überwachung von Spannung, Strom, Belastung sowie Energieimport und -export und Unterstützung von Wartungs-, Abschalt- und Wiederinbetriebnahmeaktivitäten.
+\end{itemize}
+
+\section{Ausgewählte technische Projekte}
+\textbf{Datengestützte Genauigkeitsbewertung von Energiezählern} \hfill \textit{seit 2025}\\[-2pt]
+Entwicklung eines reproduzierbaren Workflows für historische Zählerprüfdaten mit Prüfpunktharmonisierung, Messabweichungsanalyse, Langzeitbewertung, gerätebezogenen KPIs und automatisierter Berichterstellung.\\[4pt]
+
+\textbf{Automatisiertes dreiphasiges Energiezähler-Prüflabor} \hfill \textit{seit 2026}\\[-2pt]
+Integration von programmierbarer Leistungstechnik, elektronischen Lasten, Referenzmessgeräten, Energiezählern und Datenbanken über Python, Node-RED, Modbus TCP/RTU, RS-485 und GPIB/VISA.\\[4pt]
+
+\textbf{Digitaler Zwilling zur Bewertung eines elektrischen Effizienzfilters} \hfill \textit{2024--2025}\\[-2pt]
+Messdatenbasierte Parameteridentifikation und Validierung von Simulationsmodellen zur Vorabbewertung eines industriellen elektrischen Effizienzsystems.
+
+\section{Studium}
+\entry{M.Sc. Renewable Energy and Data Engineering}{2023--2025}{Hochschule Offenburg}{Deutschland}
+Masterarbeit: Entwicklung eines digitalen Zwillings zur Bewertung der Leistung und des Energieeinsparpotenzials eines industriellen elektrischen Effizienzsystems.\\[3pt]
+\entry{B.Tech. Electrical and Electronics Engineering}{2014--2018}{University of Kerala}{Indien}
+
+\section{Technische Kenntnisse}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Programmierung & Python, SQL, Pandas, NumPy, Scikit-learn, statistische Analyse, Zeitreihenanalyse\\
+Automatisierung & Node-RED, Modbus TCP/RTU, RS-485, GPIB, VISA, Datenerfassung\\
+Engineering-Tools & MATLAB, Simulink, Simscape, LTspice\\
+Messtechnik & Energiezählerprüfung, elektrische Messtechnik, Energiesysteme, Umspannwerke, Transformatoren, Schaltanlagen, Schutzsysteme\\
+Datenbanken & Microsoft SQL Server, MySQL, InfluxDB\\
+\end{tabularx}
+
+\section{Weiterbildung}
+Python for Data Science (DataCamp)
+
+\section{Sprachen \& Zusatzinformationen}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.55cm}X@{}}
+Sprachen & Malayalam (Muttersprache), Englisch (C1), Deutsch (B2), Tamil (B1), Hindi (B1)\\
+Führerschein & Deutscher Führerschein, Klasse B197\\
+Wohnort & Ortenberg, Deutschland\\
+\end{tabularx}
+\end{document}
