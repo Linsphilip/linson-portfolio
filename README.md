@@ -1,6 +1,6 @@
 # Linson Philip — Professional Portfolio
 
-Static portfolio website prepared for GitHub Pages or any static hosting provider.
+Static portfolio website prepared for GitHub Pages 
 
 ## What is included
 
