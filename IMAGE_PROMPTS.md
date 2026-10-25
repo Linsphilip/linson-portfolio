@@ -1,0 +1,17 @@
+Generated using the built-in image-generation tool. Four distinct landscape representative scenes, not documentary photographs. Final image paths are in assets/; see README for names and limitations.
+
+## substation
+
+Use case: photorealistic-natural. Create a high quality realistic editorial photograph for an electrical engineer portfolio, landscape 16:9. An Indian 110/11 kV outdoor air-insulated substation in Kerala, tropical coconut trees beyond fence, grey power transformer with radiators, ceramic bushings, steel gantries, coherent three-phase equipment spacing, crushed stone yard, natural overcast daylight. In foreground a generic adult South Indian operator seen from behind in white hardhat and navy long-sleeve workwear and safety boots, holding a clipboard on the designated walkway OUTSIDE equipment exclusion zones, visually inspecting from safe distance. No live work, no touching equipment, no switching instructions, no exposed close-range hazards. Credible documentary photography, subtle navy and warm grey colour grading, not cinematic fantasy. This is a representative scene, not an actual KSEB site. No logos, no readable text, no user likeness, no watermark.
+
+## pv
+
+Use case: photorealistic-natural. Realistic architectural editorial photograph for engineer portfolio. Wide 16:9 image of a modest contemporary German apartment balcony with two black photovoltaic modules firmly mounted on exterior metal railing with plausible secure bracket supports. Early summer soft sunlight, cream facade, discreet cables neatly secured, small micro-inverter largely hidden behind panels, no unsafe loose cables or exposed connectors. Eye-level three-quarter exterior view focused on balcony PV installation, no people, no logos, no labels, no watermark. Natural understated colours, high realism, not futuristic. Representative micro-PV installation not a specific real site.
+
+## lab
+
+Use case: photorealistic-natural. Realistic engineering laboratory editorial photograph, wide 16:9, orderly electrical energy-meter test laboratory. Bench and rack with programmable AC source, electronic load modules, reference measurement instrument and three compact electricity meters in protected enclosed fixtures, safe insulated connections routed through cable channels, laptop viewed obliquely with an indistinct engineering interface not readable. Neutral modern university laboratory background, soft daylight, tactile metal and plastic surfaces, restrained navy grey palette, realistic plausible instrument proportions, no brands or readable claims, no sparks, no human, no fantasy equipment. Representative laboratory, NOT a specific actual lab or product.
+
+## filter
+
+Use case: photorealistic-natural. Realistic close-up engineering editorial photograph, landscape 16:9. A GENERIC passive inductive component on an unpowered laboratory bench: three substantial copper windings on laminated magnetic cores, compact industrial assembly, insulated terminals with protective covers, nearby LCR measuring instrument and closed laptop softly out of focus. This is conceptual imagery for electrical measurement and simulation of series-connected passive inductive filtering; NOT a replica of a Livarsa product or a figure from a paper. No schematic, no invented model results, no labels, no logos, no energized exposed wiring, no people. Natural soft light, exact tactile metal and varnished copper textures, sober professional engineering photography.
